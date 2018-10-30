@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Year End Party 2018 | META</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="../assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="../assets/bower_components/select2/dist/css/select2.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../assets/bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="../assets/bower_components/Ionicons/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../assets/dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+        folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="../assets/dist/css/skins/_all-skins.min.css">
+    <!--FAB4-->
+    <link rel="stylesheet" href="../assets/dist/css/fab4meta.css">
+    <!-- Plotly JS-->
+    <script src="../charts/plotly.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!--Tableau-->
+    <script type='text/javascript' src='http://tableau.sunpowercorp.com/javascripts/api/viz_v1.js'></script>
+
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="skin-black-light sidebar-collapse">
+<!-- Site wrapper -->
+<div class="wrapper">
+
+    <header class="main-header">
+        <!-- Logo -->
+        <a href="/" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini"><b>F</b>M</span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg"><b>FAB4</b>META</span>
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top">
+        <!-- Sidebar toggle button
+        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+        -->
+        <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+            <!-- Messages: style can be found in dropdown.less-->
+            <li class="dropdown messages-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-envelope-o"></i>
+                <span class="label label-success"></span>
+                </a>
+                <ul class="dropdown-menu">
+                <li class="header">You have 0 new messages</li>
+                <li>
+                    <!--
+                    <ul class="menu">
+                    <li>
+                        <a href="#">
+                        <div class="pull-left">
+                            <img src="../assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        </div>
+                        <h4>
+                            Support Team
+                            <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                        </h4>
+                        <p>Why not buy a new awesome theme?</p>
+                        </a>
+                    </li>
+                    </ul>
+                    -->
+                </li>
+                <li class="footer"><a href="#">See All Messages</a></li>
+                </ul>
+            </li>
+            <!-- Notifications: style can be found in dropdown.less -->
+            <li class="dropdown notifications-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-bell-o"></i>
+                <span class="label label-warning"></span>
+                </a>
+                <ul class="dropdown-menu">
+                <li class="header">You have 0 new notifications</li>
+                <li>
+                    <!-- inner menu: contains the actual data 
+                    <ul class="menu">
+                    <li>
+                        <a href="#">
+                        <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                        </a>
+                    </li>
+                    </ul>
+                    -->
+                </li>
+                <li class="footer"><a href="#">View all</a></li>
+                </ul>
+            </li>
+            <!-- Tasks: style can be found in dropdown.less -->
+            <li class="dropdown tasks-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-flag-o"></i>
+                <span class="label label-danger"></span>
+                </a>
+                <ul class="dropdown-menu">
+                <li class="header">You have 0 new action requests</li>
+                <li>
+                    <!-- inner menu: contains the actual data
+                    <ul class="menu">
+                    <li>
+                        <a href="#">
+                        <h3>
+                            Design some buttons
+                            <small class="pull-right">20%</small>
+                        </h3>
+                        <div class="progress xs">
+                            <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar"
+                                aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                            <span class="sr-only">20% Complete</span>
+                            </div>
+                        </div>
+                        </a>
+                    </li>
+                    </ul>
+                    -->
+                </li>
+                <li class="footer">
+                    <a href="#">View all tasks</a>
+                </li>
+                </ul>
+            </li>
+            <!-- User Account: style can be found in dropdown.less -->
+            <li class="dropdown user user-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <img src="../assets/dist/img/avatar5.png" class="user-image" alt="User Image">
+                <span class="hidden-xs"><%= name %></span>
+                </a>
+                <ul class="dropdown-menu">
+                <!-- User image -->
+                <li class="user-header">
+                    <img src="../assets/dist/img/avatar5.png" class="img-circle" alt="User Image">
+
+                    <p>
+                    <%= name %>
+                    <small><%= department %> Team</small>
+                    </p>
+                </li>
+                <!-- Menu Body -->
+                <li class="user-body">
+                    <div class="row">
+                    <div class="col-xs-6 text-center">
+                        <a href="#">Followers</a>
+                    </div>
+                    <div class="col-xs-6 text-center">
+                        <a href="#">Action Requests</a>
+                    </div>
+                    </div>
+                    <!-- /.row -->
+                </li>
+                <!-- Menu Footer-->
+                <li class="user-footer">
+                    <div class="pull-left">
+                    <a href="#" class="btn btn-default btn-flat">Profile</a>
+                    </div>
+                    <div class="pull-right">
+                    <a href="/logout" class="btn btn-default btn-flat">Logout</a>
+                    </div>
+                </li>
+                </ul>
+            </li>
+            <!-- Control Sidebar Toggle Button
+            <li>
+                <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+            </li>
+            -->
+            </ul>
+        </div>
+        </nav>
+    </header>
+
+    <!-- =============================================== -->
+
+    <!-- Left side column. contains the sidebar -->
+    <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+        <!-- Sidebar user panel 
+        <div class="user-panel">
+            <div class="pull-left image">
+            <img src="../assets/dist/img/avatar5.png" class="img-circle" alt="User Image">
+            </div>
+            <div class="pull-left info">
+            <p><%= name %></p>
+            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+            </div>
+        </div>
+        ->
+        <!-- search form 
+        <form action="#" method="get" class="sidebar-form">
+            <div class="input-group">
+            <input type="text" name="q" class="form-control" placeholder="Search...">
+            <span class="input-group-btn">
+                    <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                    </button>
+                </span>
+            </div>
+        </form>
+        -->
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu" data-widget="tree">
+
+            <!--
+            <li class="header">MAIN NAVIGATION</li>
+            <li class="active">
+            <a href="/">
+                <i class="fa fa-home"></i> <span>Home</span>
+            </a>
+            </li>
+            <li class="treeview active">
+            <a href="#">
+                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+                <li><a href="/hourly"><i class="ion ion-ios-close-outline" style="color:red;"></i> Hourly WIP & Outs </a></li>
+                <li><a href="/lot?type=aging"><i class="ion ion-ios-checkmark-outline" style="color:green;"></i> Aging Lots </a></li>
+                <li><a href="/reports?type=cycletime"><i class="ion ion-ios-checkmark-outline" style="color:green;"></i> Cycle Time </a></li>
+                <li><a href="/th?filename=ndep.txt"><i class="ion ion-ios-checkmark-outline" style="color:green;"></i> Tube Health </a></li>
+            </ul>
+            </li>
+
+            <li class="treeview active">
+            <a href="#">
+                <i class="fa fa-edit"></i> <span>Prototype</span>
+                <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+                <li><a href="/coa"><i class="ion ion-ios-checkmark-outline" style="color:green;"></i> Certificate of Analysis </a></li>
+                <li><a href="/activity"><i class="ion ion-ios-checkmark-outline" style="color:green;"></i> Engineering Activity </a></li>
+            </ul>
+            </li>
+            <li class="treeview">
+            <a href="#">
+                <i class="fa fa-pie-chart"></i>
+                <span>Reports</span>
+                <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-circle-o"></i>
+                        <span>Fab4 Cycletime</span>
+                        <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Overall Cycletime</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Cluster 1 Cycletime</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Cluster 2 Cycletime</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Cluster 3 Cycletime</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Cluster 4 Cycletime</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Cluster 5 Cycletime</a></li>
+                    </ul>
+                </li>
+            </ul>
+            </li>
+            <li class="treeview">
+            <a href="#">
+                <i class="fa fa-laptop"></i>
+                <span>Prototypes</span>
+                <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+                <li><a href="#"><i class="fa fa-circle-o"></i> Certificate of Analysis</a></li>
+            </ul>
+            </li>
+            <li class="header">SUPPORT</li>
+            <li><a href="#"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
+            -->
+        </ul>
+        <!--reminder ad
+        <div id="reminder-ad" class="show color_5">
+            <p class="reminder-ad-p">Hello Fab4,</p>
+            <p class="reminder-ad-p">This app is a platform for prototypes. Any issues, downtime and delays are expected.</p>
+            <p class="reminder-ad-p">Thank you! ❤️</p>
+        </div>
+        -->
+        </section>
+        <!-- /.sidebar -->
+    </aside>
+
+    <!-- =============================================== -->
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <div class="col-md-10 col-centered">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+        <h1>
+            <small></small>
+        </h1>
+        </section>
+        
+        <!-- Main content -->
+        <section class="content">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="box box-primary">
+                        <div class="box-body box-profile">
+                            
+                            <h3 class="profile-username text-center"><%= name %></h3>
+
+                            <p class="text-muted text-center"><%= title %></p>
+
+                            <ul class="list-group list-group-unbordered">
+                                <li class="list-group-item">
+                                <b>Employee Number</b> <a class="pull-right"><%= employeeNumber %></a>
+                                </li>
+                                <li class="list-group-item">
+                                <b>Username</b> <a class="pull-right"><%= username %></a>
+                                </li>
+                                <li class="list-group-item">
+                                <b>Shift</b> <a class="pull-right"><%= shift %></a>
+                                </li>
+                                <li class="list-group-item">
+                                <b>Supervisor</b> <a class="pull-right"><%= supervisor %></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="col-md-6">
+                    <div class="nav-tabs-custom">
+                        <ul class="nav nav-tabs">
+                            <li class="active">
+                                <a href="#survey" data-toggle="tab">2018 Year-End Party Survey</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" style="height:100%;">
+                            <div class="row">
+                                <div id="question-box">
+                                    <div class="col-md-12 post">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <% if(confirmation == 'Unconfirmed') { %>
+                                                    <p>Hi <%= givenName %>, are you going to attend?</p>
+                                                    <img class="img-responsive" style="width: 100%; padding-bottom:10px;" src="../assets/dist/img/header_boho.png" alt="Photo">
+                                                    <ul class="list-inline">
+                                                        <li>
+                                                            <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#attend-yes"><i class="fa fa-heart text-red"></i> Yes, I will attend</button>
+                                                        </li>
+                                                        <li>
+                                                            <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#attend-no"><i class="fa fa-close text-yellow"></i> No</button>
+                                                        </li>
+                                                    </ul>
+                                                <% } else if(confirmation == 'Declined') { %>
+                                                    <p>Thank you <%= givenName %>!</p>
+                                                    <img class="img-responsive" style="width: 100%; padding-bottom:10px;" src="../assets/dist/img/header_boho.png" alt="Photo">
+                                                <% } else { %>
+                                                    <p>Thank you <%= givenName %>. See you! <i class="fa fa-heart text-red"></i></p> 
+                                                    <img class="img-responsive" style="width: 100%; padding-bottom:10px;" src="../assets/dist/img/header_boho.png" alt="Photo">
+                                                <% } %>
+                                            </div>
+                                            <div class="modal fade" id="attend-no" style="display: none;">
+                                                <form id="notAttend">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">×</span></button>
+                                                            <h4 class="modal-title">I'm not going to our event.</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <input type="hidden" name="authenticity_token" value="<%= authenticity_token %>">
+                                                            <input type="hidden" name="employeeNumber" value="<%= employeeNumber %>">
+                                                            <input type="hidden" name="username" value="<%= username %>">
+                                                            <input type="hidden" name="name" value="<%= name %>">
+                                                            <input type="hidden" name="department" value="<%= department %>">
+                                                            <input type="hidden" name="title" value="<%= title %>">
+                                                            <input type="hidden" name="boolAttend" value="0">
+                                                            
+                                                            <input placeholder="Because ..."  autocomplete="off" name="reason" id="reason_notAttend" class="form-control" required >
+                                                            <select hidden name="incoming_shuttle"><option selected value=""></select>
+                                                            <select hidden name="outgoing_shuttle"><option selected value=""></select>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <div id='responseDiv_notAttend'>
+                                                                <!-- response here-->
+                                                            </div>
+                                                            <div id="aftersub_notAttend">
+                                                                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                                                                <button type="submit" id="submit_notAttend_survey" class="btn btn-primary">Confirm</button>
+                                                            </div>
+                                                        </div>
+                                                        </div>
+                                                        <!-- /.modal-content -->
+                                                    </div>
+                                                        
+                                                </form>
+                                                <!-- /.modal-dialog -->
+                                            </div>
+                                            <div class="modal fade" id="attend-yes" style="display: none;">
+                                                <form id="willAttend">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">×</span></button>
+                                                            <h4 class="modal-title">I will attend on <%= party_sched %>!</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <p>Good! Please indicate your routes: </p>
+                                                            <div id="shuttle-route">
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <input type="hidden" name="authenticity_token" value="<%= authenticity_token %>">
+                                                                        <input type="hidden" name="employeeNumber" value="<%= employeeNumber %>">
+                                                                        <input type="hidden" name="username" value="<%= username %>">
+                                                                        <input type="hidden" name="name" value="<%= name %>">
+                                                                        <input type="hidden" name="department" value="<%= department %>">
+                                                                        <input type="hidden" name="title" value="<%= title %>">
+                                                                        <input type="hidden" name="boolAttend" value="1">
+                                                                        <input type="hidden" name="reason" value="">
+                                                                        <label>Pick Incoming route:</label>
+                                                                        <select id="incoming_id" name="incoming_shuttle" required class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                                                            <option selected="selected" value=""></option>
+                                                                            <option value="Alabang">Alabang</option>
+                                                                            <option value="Balibago-Tagapo">Balibago/Tagapo</option>
+                                                                            <option value="Balibago-Walter">Balibago/Walter</option>
+                                                                            <option value="Calamba-Mayapa">Calamba/Mayapa</option>
+                                                                            <option value="Mamatid-Pulo">Mamatid/Pulo</option>
+                                                                            <option value="Tanauan">Tanauan</option>
+                                                                            <option value="Pala-pala">Pala-Pala</option>
+                                                                            <option value="San-Pedo">San Pedro</option>
+                                                                            <option value="Fab4">Fab4</option>
+                                                                            <option value="Carpool">Carpool</option>
+                                                                            <option value="Car">Own Car</option>
+                                                                        </select>
+                                                                        <br>
+                                                                        <br>
+                                                                        <label>Pick Outgoing route:</label>
+                                                                        <select id="outgoing_id" name="outgoing_shuttle" required class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                                                            <option selected="selected" value=""></option>
+                                                                            <option value="Alabang">Alabang</option>
+                                                                            <option value="Balibago-Tagapo">Balibago/Tagapo</option>
+                                                                            <option value="Balibago-Walter">Balibago/Walter</option>
+                                                                            <option value="Calamba-Mayapa">Calamba/Mayapa</option>
+                                                                            <option value="Mamatid-Pulo">Mamatid/Pulo</option>
+                                                                            <option value="Tanauan">Tanauan</option>
+                                                                            <option value="Pala-pala">Pala-Pala</option>
+                                                                            <option value="San-Pedo">San Pedro</option>
+                                                                            <option value="Fab4">Fab4</option>
+                                                                            <option value="Carpool">Carpool</option>
+                                                                            <option value="Car">Own Car</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <div id='responseDiv'>
+                                                                <!-- response here-->
+                                                            </div>
+                                                            <div id="aftersub">
+                                                                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                                                                <button type="submit" id="submit_willAttend_survey" class="btn btn-primary">Confirm</button>
+                                                            </div>
+                                                        </div>
+                                                        </div>
+                                                        <!-- /.modal-content -->
+                                                    </div>
+                                                </form>
+                                                <!-- /.modal-dialog -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Upcoming Event</h3>
+                        </div>
+                        <div class="box-body">
+                            <strong><i class="fa fa-star margin-r-5"></i> 2018 Year-End Party</strong>
+
+                            <p class="text-muted">
+                                Boho Dream Night 
+                            </p>
+
+                            <hr>
+
+                            <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
+
+                            <p class="text-muted">Monochrome Nuvali</p>
+
+                            <hr>
+
+                            <strong><i class="fa fa-calendar margin-r-5"></i> Scheduled 
+                                <% if(confirmation == 'Unconfirmed') { %>
+                                    <span class="label label-danger">Unconfirmed</span></strong>
+                                <% } else if(confirmation == 'Declined') { %>
+                                    <span class="label label-warning">Declined</span></strong>
+                                <% } else { %>
+                                    <span class="label label-success">Confirmed</span></strong>
+                                <% } %>
+                            <p class="text-muted">
+                                <%= party_sched %>
+                            </p>
+                        </div>
+                        <div class="box-footer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /.content -->
+        </div>
+    </div>
+    <!-- /.content-wrapper -->
+
+    <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+        <b></b> 1.0.0
+        </div>
+        <strong>M E T A</strong> - Manufacturing and Engineering Tool App
+    </footer>
+
+    
+    <!-- Add the sidebar's background. This div must be placed
+        immediately after the control sidebar -->
+    <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 3 -->
+<script src="../assets/bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="../assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- SlimScroll -->
+<script src="../assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<!-- Select2 -->
+<script src="../assets/bower_components/select2/dist/js/select2.full.min.js"></script>
+<!-- FastClick -->
+<script src="../assets/bower_components/fastclick/lib/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="../assets/dist/js/adminlte.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $('.sidebar-menu').tree()
+     //Initialize Select2 Elements
+    $('.select2').select2()
+  })
+</script>
+<!-- API Response handler -->
+<script>
+    window.addEventListener('load', function(){
+
+        function goWillAttend(){
+
+            let xhr = new XMLHttpRequest();
+            let fd = new FormData(form); // bind form data object and form element
+            
+            xhr.addEventListener('load', function(event){
+                console.log(event.target.response);
+                let resFromServer = JSON.parse(event.target.response);
+                document.getElementById('responseDiv').style.display='block';
+                function resDiv(){
+                    let responseDiv = document.getElementById('responseDiv');
+                    
+                    if(resFromServer.err){
+                        document.getElementById('aftersub').style.display="block";
+                        document.getElementById('incoming_id').removeAttribute("disabled");
+                        document.getElementById('outgoing_id').removeAttribute("disabled");
+
+                        if (responseDiv.classList) { 
+                            responseDiv.classList.add("responseDivErr");
+                            responseDiv.innerHTML = resFromServer.err
+                        } else {
+                            // For IE9
+                            var classes = responseDiv.className.split(" ");
+                            var i = classes.indexOf("responseDivErr");
+
+                            if (i >= 0) {
+                                classes.splice(i, 1);
+                            } else { 
+                                classes.push("responseDivErr");
+                                responseDiv.className = classes.join(" "); 
+                                responseDiv.innerHTML = resFromServer.err
+                            }
+                        }
+
+                    } else {
+
+                        if (responseDiv.classList) { 
+                            responseDiv.classList.add("responseDivSuccess");
+                            responseDiv.innerHTML = resFromServer.auth;
+
+                            setTimeout(function(){
+                                window.location.href="/";
+
+                            }, 1000);
+
+                        } else {
+                            // For IE9
+                            var classes = responseDiv.className.split(" ");
+                            var i = classes.indexOf("responseDivSuccess");
+
+                            if (i >= 0) {
+                                classes.splice(i, 1);
+                            } else { 
+                                classes.push("responseDivSuccess");
+                                responseDiv.className = classes.join(" "); 
+                                responseDiv.innerHTML = resFromServer.auth;
+                                
+
+                                setTimeout(function(){
+                                    window.location.href="/";
+                                }, 1000);
+                            }
+                        }
+                    }
+
+                    
+                }
+
+                resDiv();
+            });
+
+            xhr.addEventListener('error', function(event){
+                alert('Something went wrong.');
+            });
+
+            xhr.open('POST', '/api/party');
+            xhr.send(fd);
+
+        }
+
+        function goNotAttend(){
+            let xhr = new XMLHttpRequest();
+            let fd = new FormData(form2); // bind form data object and form element
+            
+            xhr.addEventListener('load', function(event){
+                console.log(event.target.response);
+                let resFromServer = JSON.parse(event.target.response);
+                document.getElementById('responseDiv_notAttend').style.display='block';
+                function resDiv(){
+                    let responseDiv = document.getElementById('responseDiv_notAttend');
+                    
+                    if(resFromServer.err){
+                        document.getElementById('aftersub_notAttend').style.display="block";
+                        document.getElementById('reason_notAttend').removeAttribute("disabled");
+
+                        if (responseDiv.classList) { 
+                            responseDiv.classList.add("responseDivErr");
+                            responseDiv.innerHTML = resFromServer.err
+                        } else {
+                            // For IE9
+                            var classes = responseDiv.className.split(" ");
+                            var i = classes.indexOf("responseDivErr");
+
+                            if (i >= 0) {
+                                classes.splice(i, 1);
+                            } else { 
+                                classes.push("responseDivErr");
+                                responseDiv.className = classes.join(" "); 
+                                responseDiv.innerHTML = resFromServer.err
+                            }
+                        }
+
+                    } else {
+
+                        if (responseDiv.classList) { 
+                            responseDiv.classList.add("responseDivSuccess");
+                            responseDiv.innerHTML = resFromServer.auth;
+                                
+                            setTimeout(function(){
+                                window.location.href="/";
+
+                            }, 1000);
+
+                        } else {
+                            // For IE9
+                            var classes = responseDiv.className.split(" ");
+                            var i = classes.indexOf("responseDivSuccess");
+
+                            if (i >= 0) {
+                                classes.splice(i, 1);
+                            } else { 
+                                classes.push("responseDivSuccess");
+                                responseDiv.className = classes.join(" "); 
+                                responseDiv.innerHTML = resFromServer.auth;
+
+                                setTimeout(function(){
+                                    window.location.href="/";
+                                }, 1000);
+                            }
+                        }
+                    }
+
+                    
+                }
+
+                resDiv();
+            });
+
+            xhr.addEventListener('error', function(event){
+                alert('Something went wrong.');
+            });
+
+            xhr.open('POST', '/api/party');
+            xhr.send(fd);
+
+            console.log('ey');
+        }
+
+
+        // access FORM element
+        let form = document.getElementById('willAttend');
+        // take over submit event
+        form.addEventListener('submit', function(event){
+            event.preventDefault();
+            document.getElementById('responseDiv').style.display="none";
+            document.getElementById('aftersub').style.display="none";
+            goWillAttend();
+            document.getElementById('incoming_id').setAttribute("disabled", "disabled");
+            document.getElementById('outgoing_id').setAttribute("disabled", "disabled");
+        });
+
+
+        // access FORM element
+        let form2 = document.getElementById('notAttend');
+        // take over submit event
+        form2.addEventListener('submit', function(event){
+            event.preventDefault();
+            document.getElementById('responseDiv_notAttend').style.display="none";
+            document.getElementById('aftersub_notAttend').style.display="none";
+            goNotAttend();
+            document.getElementById('reason_notAttend').setAttribute("disabled", "disabled");
+        });
+
+    });
+</script>
+</body>
+</html>
